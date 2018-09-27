@@ -11,12 +11,19 @@ Please see the guide at [https://bitcore.io/guides/full-node](https://bitcore.io
 To manually install all of the necessary components, you can run these commands:
 
 ```bash
-npm install -g bitcore-node
-bitcore-node create mynode
+
+
+git clone https://github.com/BZEdge/bitcore-node-bzedge.git
+cd bitcore-node-bzedge
+npm install
+cd bin
+./bitcore-node create mynode
 cd mynode
-bitcore-node install insight-api
-bitcore-node install insight-ui
-bitcore-node start
+git clone https://github.com/bitzec/insight-api-bitzec.git
+git clone https://github.com/bitzec/insight-ui-bitzec.git
+../bitcore-node install insight-api-bitzec
+../bitcore-node install insight-ui-bitzec
+../bitcore-node start
 ```
 
 Open a web browser to `http://localhost:3001/insight/`
@@ -70,11 +77,11 @@ compile***.
 
 ## Note
 
-For more details about the [Insight API](https://github.com/str4d/insight-api-zcash) configuration and end-points, go to [Insight API GitHub repository](https://github.com/str4d/insight-api-zcash).
+For more details about the [Insight API](https://github.com/bitzec/insight-api-bitzec) configuration and end-points, go to [Insight API GitHub repository](https://github.com/str4d/insight-api-zcash).
 
 ## Contribute
 
-Contributions and suggestions are welcomed at the [Insight UI GitHub repository](https://github.com/str4d/insight-ui-zcash).
+Contributions and suggestions are welcomed at the [Insight UI GitHub repository](https://github.com/bitzec/insight-ui-bitzec).
 
 
 ## License
