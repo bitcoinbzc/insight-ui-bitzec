@@ -13,8 +13,8 @@ To manually install all of the necessary components, you can run these commands:
 ```bash
 
 
-git clone https://github.com/BZEdge/bitcore-node-bzedge.git
-cd bitcore-node-bzedge
+git clone https://github.com/BZEdge/bitcore-node-bitzec.git
+cd bitcore-node-bitzec
 npm install
 cd bin
 ./bitcore-node create mynode
