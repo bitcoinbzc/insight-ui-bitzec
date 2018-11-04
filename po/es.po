@@ -68,8 +68,8 @@ msgid "Best Block"
 msgstr "Mejor Bloque"
 
 #: public/views/status.html
-msgid "Zcash node information"
-msgstr "Información del nodo Zcash"
+msgid "Bitzec node information"
+msgstr "Información del nodo Bitzec"
 
 #: public/views/block.html
 msgid "Block"
@@ -195,8 +195,8 @@ msgid "Last Block"
 msgstr "Último Bloque"
 
 #: public/views/status.html
-msgid "Last Block Hash (Zcashd)"
-msgstr "Último Bloque Hash (Zcashd)"
+msgid "Last Block Hash (Bitzecd)"
+msgstr "Último Bloque Hash (Bitzecd)"
 
 #: public/views/index.html
 msgid "Latest Blocks"
