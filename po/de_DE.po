@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "<strong>insight</strong> befindet sich aktuell noch in der Entwicklung. "
 "Bitte sende alle gefundenen Fehler (Bugs) und Feedback zur weiteren "
-"Verbesserung an unseren <a href=\"https://github.com/bitzec/insight-ui-zcash/issues"
+"Verbesserung an unseren <a href=\"https://github.com/bitzec/insight-ui-bitzec/issues"
 "\" target=\"_blank\">Github Issue Tracker</a>."
 
 #: public/views/index.html
@@ -91,11 +91,11 @@ msgstr "Serialisierte Bytes"
 
 #: public/views/includes/connection.html
 msgid ""
-"Can't connect to zcashd to get live updates from the p2p network. (Tried "
-"connecting to zcashd at {{host}}:{{port}} and failed.)"
+"Can't connect to bitzecd to get live updates from the p2p network. (Tried "
+"connecting to bitzecd at {{host}}:{{port}} and failed.)"
 msgstr ""
 "Es ist nicht möglich mit Zcashd zu verbinden um live Aktualisierungen vom "
-"P2P Netzwerk zu erhalten. (Verbindungsversuch zu zcashd an {{host}}:"
+"P2P Netzwerk zu erhalten. (Verbindungsversuch zu bitzecd an {{host}}:"
 "{{port}} ist fehlgeschlagen.)"
 
 #: public/views/includes/connection.html

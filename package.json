@@ -38,11 +38,11 @@
     "insight",
     "blockchain",
     "blockexplorer",
-    "zcash",
+    "bitzec",
     "bitcore",
     "front-end"
   ],
-  "bitcoreNode": "bitcore-node-zcash",
+  "bitcoreNode": "bitcore-node-bitzec",
   "dependencies": {
   },
   "devDependencies": {
