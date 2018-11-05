@@ -23,11 +23,12 @@ git clone https://github.com/bitzec/insight-api-bitzec.git
 git clone https://github.com/bitzec/insight-ui-bitzec.git
 ../bitcore-node install insight-api-bitzec
 ../bitcore-node install insight-ui-bitzec
-../bitcore-node start
+../bitcore-node start ( you need first to compile https://github.com/bitzec/bitzec-patched-for-explorer  and copy paste /src/bitzecd   to bitcore-node-bitzec/bin/ )
 ```
 
 Open a web browser to `http://localhost:3001/insight/`
 
+( you need to compie https://github.com/bitzec/bitzec-patched-for-explorer  and copy paste /src/bitzecd   to bitcore-node-bitzec/bin/
 ## Development
 
 To run Insight UI locally in development mode:
