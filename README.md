@@ -13,7 +13,7 @@ To manually install all of the necessary components, you can run these commands:
 ```bash
 
 
-git clone https://github.com/bitzec/bitcore-node-bitzec.git
+git clone https://github.com/bitzec/bitcore-node-bitzec
 cd bitcore-node-bitzec
 npm install
 cd bin
