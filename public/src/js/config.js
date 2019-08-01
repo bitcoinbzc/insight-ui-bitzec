@@ -1,11 +1,28 @@
 'use strict';
 
+angular.module('insight')
+.constant('Constants', {
+
+	CURRENCY: {
+		BZC : 'BZC',
+		USD : 'USD',
+		BTC : 'BTC'
+	},
+	BLOCKS_AMOUNT: 15,
+	TRANSACTION_DISPLAYED: 10,
+	BLOCKS_DISPLAYED: 5,
+	CHART_DAYS: 14,
+    NETWORK: window.current_network ? window.current_network : 'livenet',
+    DEFAULT_LANGUAGE: localStorage.getItem('insight-language') || 'en',
+    DEFAULT_CURRENCY: localStorage.getItem('insight-currency') || 'ZEC'
+
+});
 //Setting up route
 angular.module('insight').config(function($routeProvider) {
   $routeProvider.
     when('/block/:blockHash', {
       templateUrl: 'views/block.html',
-      title: 'Bitzec Block '
+      title: 'Zcash Block '
     }).
     when('/block-index/:blockHeight', {
       controller: 'BlocksController',
@@ -17,7 +34,7 @@ angular.module('insight').config(function($routeProvider) {
     }).
     when('/tx/:txId/:v_type?/:v_index?', {
       templateUrl: 'views/transaction.html',
-      title: 'Bitzec Transaction '
+      title: 'Zcash Transaction '
     }).
     when('/', {
       templateUrl: 'views/index.html',
@@ -25,25 +42,53 @@ angular.module('insight').config(function($routeProvider) {
     }).
     when('/blocks', {
       templateUrl: 'views/block_list.html',
-      title: 'Bitzec Blocks solved Today'
+      title: 'BITZEC Blocks solved Today'
     }).
     when('/blocks-date/:blockDate/:startTimestamp?', {
       templateUrl: 'views/block_list.html',
-      title: 'Bitzec Blocks solved '
+      title: 'Zcash Blocks solved '
     }).
     when('/address/:addrStr', {
       templateUrl: 'views/address.html',
-      title: 'Bitzec Address '
+      title: 'Zcash Address '
     }).
-    when('/charts/:chartType?', {
+	 when('/charts', {
       templateUrl: 'views/charts.html',
       title: 'Charts'
     }).
+    when('/stats', {
+		  templateUrl: 'views/statistics.html',
+		  title: 'Stats'
+	  }).
+    when('/stats/:type/:days', {
+		  controller: 'StatisticsController',
+		  templateUrl: 'views/chart.html',
+		  title: 'Statistics'
+	 }).
+	when('/pools', {
+			controller: 'PoolsController',
+			templateUrl: 'views/pools.html',
+			title: 'Pools'
+	}).
+	when('/pools/:date', {
+			controller: 'PoolsController',
+			templateUrl: 'views/pools.html',
+			title: 'Pools'
+	}).
     when('/status', {
       templateUrl: 'views/status.html',
       title: 'Status'
     }).
-    when('/messages/verify', {
+		when('/network', {
+			templateUrl: 'views/network.html',
+			title: 'Network'
+		}).
+    when('/rich-list', {
+        controller: 'RichListController',
+        templateUrl: 'views/rich_list.html',
+        title: 'Rich List'
+	}).
+	when('/messages/verify', {
       templateUrl: 'views/messages_verify.html',
       title: 'Verify Message'
     })

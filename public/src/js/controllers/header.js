@@ -6,19 +6,27 @@ angular.module('insight.system').controller('HeaderController',
 
     $rootScope.currency = {
       factor: 1,
-      bitstamp: 0,
-      testnet: testnet,
-      netSymbol: netSymbol,
-      symbol: netSymbol
+      symbol: 'ZEC',
+      realSymbol: 'ZEC',
+      netSymbol: 'ZEC'
     };
 
     $scope.menu = [{
       'title': 'Blocks',
       'link': 'blocks'
     }, {
-      'title': 'Charts',
-      'link': 'charts'
-    }, {
+	  'title': 'Statistics',
+      'link': 'stats'
+	}, {
+	  'title': 'Rich List',
+      'link': 'rich-list'
+	}, {
+	  'title': 'Pools',
+      'link': 'pools'
+	}, {
+	  'title': 'Nodes',
+      'link': 'network'
+	}, {
       'title': 'Status',
       'link': 'status'
     }];
