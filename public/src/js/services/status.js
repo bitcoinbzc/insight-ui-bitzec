@@ -14,12 +14,4 @@ angular.module('insight.status')
   .factory('PeerSync',
     function($resource) {
       return $resource(window.apiPrefix + '/peer');
-    })
-  .factory('Peers',
-    function($resource) {
-      return $resource(window.apiPrefix + '/status?q=getPeerInfo');
-   })
-  .factory('MiningInfo',
-      function($resource) {
-        return $resource(window.apiPrefix + '/status?q=getMiningInfo');
     });

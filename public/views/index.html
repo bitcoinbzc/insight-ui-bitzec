@@ -5,7 +5,7 @@
 <section data-ng-controller="IndexController" data-ng-init="index()">
   <div class="container">
     <div id="home" class="row">
-      <div class="col-xs-12 col-md-8 col-gray">
+      <div class="col-xs-12 col-md-8">
 
         <div id="search-form-mobile" class="visible-xs" data-ng-include src="'views/includes/search.html'"></div>
 
@@ -52,7 +52,7 @@
             <td>
               <a class="ellipsis" href="tx/{{tx.txid}}">{{tx.txid}}</a>
             </td>
-            <td class="text-right"><span class="ellipsis">{{$root.currency.getConvertion(tx.valueOut) || tx.valueOut + ' ZEC'}}</span></td>
+            <td class="text-right"><span class="ellipsis">{{$root.currency.getConvertion(tx.valueOut)}}</span></td>
           </tr>
           </tbody>
         </table>
@@ -60,25 +60,21 @@
       </div>
 
       <div class="col-xs-12 col-md-4 col-gray">
-        <h2 translate>Brief Info:</h2>
-        <!--<p><span class="ng-scope" translate><strong class="ng-scope"translate>Developers fund</strong> supply: <a href="/address/t1W3DXSzNbXPWF7ghEU3xcqjLfBAKJGcmN4" class="link mark">11,000,000 ZEC</a></span></p>-->
-                <p><strong class="ng-scope" translate><a href="https://zelcore.io/">ZelCore</a></strong>&nbsp;<span class="ng-scope" translate> is a multiasset encrypted wallet available for all platforms containing both light and full node client.</span></p>
-                <p><strong class="ng-scope" translate><a href="https://zecmate.com/">ZECmate</a></strong>&nbsp;<span class="ng-scope" translate> is a fully open source project developing applications around Zcash blockchain.
-                  Such as this <a href="https://github.com/ZECmate/bitcore-node-zecmate/">ZECmate insight based explorer</a>. Another project is full node ZECmate Swing Wallet for Zcash available for macOS, Windows and Linux at <a href="https://swing.zecmate.com">swing.zecmate.com</a>.
-                  ZECmate also features an easy webwallet. Check it out at <a href="https://webwallet.zecmate.com"> webwallet.zecmate.com</a> and lastly our Zcash API rates can be found at <a href="https://rates.zecmate.com">rates.zecmate.com</a>. 
-                  <br><br>
-                  <strong class="ng-scope" translate><a href="https://github.com/ZECmate/">ZECmate github</a></strong>
-                </span></p>
-                               <!--<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-        <div class="coinmarketcap-currency-widget" data-currencyid="2577" data-base="USD" data-secondary="BTC" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="true"></div>-->
+        <h2 translate>About</h2>
+        <p translate><strong>insight</strong>  is an <a href="https://insight.is/"
+          target="_blank">open-source Bitzec blockchain explorer</a> with complete REST and websocket APIs that can be used for writing web wallets and other apps  that need more advanced blockchain queries than provided by bitzecd RPC.  Check out the <a href="https://github.com/bitzec/insight-ui-bitzec" target="_blank">source code</a>.</p>
+        <p translate><strong>insight</strong> is still in development, so be sure to report any bugs and provide feedback for improvement at our <a href="https://github.com/bitzec/insight-ui-bitzec/issues" target="_blank">github issue tracker</a>.</p>
+        <p data-ng-if='currency.testnet'><strong>This explorer is currently showing testnet Bitzec!</strong></p>
         <div id="powered" class="row">
           <div class="powered-text">
-            <small class="text-muted" translate>Follow our project</small>
+            <small class="text-muted" translate>Powered by</small>
           </div>
-          <a href="https://twitter.com/Zel_Core" target="_blank" class="twitter" title="Twitter"></a>
-          <a href="https://discord.gg/MvBrJB9" target="_blank" class="discord" title="Discord"></a>
+          <a href="http://bitcore.io" target="_blank" class="bitcore" title="Bitcore"></a>
+          <a href="http://angularjs.org" target="_blank" class="angularjs" title="AngularJS"></a>
+          <a href="https://code.google.com/p/leveldb/" target="_blank" class="leveldb" title="LevelDB"></a>
+          <a href="http://nodejs.org" target="_blank" class="nodejs" title="NodeJs"></a>
         </div>
-      </div>
+      </div> <!-- END OF COL-3 -->
     </div>
   </div>
 </section>

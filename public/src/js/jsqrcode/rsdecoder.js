@@ -132,7 +132,7 @@ function ReedSolomonDecoder(field)
 			if (numErrors == 1)
 			{
 				// shortcut
-				return [ errorLocator.getCoefficient(1) ];
+				return new Array(errorLocator.getCoefficient(1));
 			}
 			var result = new Array(numErrors);
 			var e = 0;

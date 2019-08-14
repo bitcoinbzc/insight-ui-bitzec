@@ -1,7 +1,10 @@
 'use strict';
 
+var testnet = false;
+var netSymbol = testnet ? 'TBZC' : 'BCZ';
+
 var defaultLanguage = localStorage.getItem('insight-language') || 'en';
-var defaultCurrency = localStorage.getItem('insight-currency') || 'ZEC';
+var defaultCurrency = localStorage.getItem('insight-currency') || netSymbol;
 
 angular.module('insight',[
   'ngAnimate',
@@ -16,38 +19,23 @@ angular.module('insight',[
   'insight.system',
   'insight.socket',
   'insight.blocks',
-  'insight.statistics',
-  'insight.richList',
   'insight.transactions',
   'insight.address',
   'insight.search',
-  'insight.chart',
   'insight.charts',
-  'insight.markets',
   'insight.status',
   'insight.connection',
   'insight.currency',
-  'insight.messages',
-  'ngclipboard',
-  'insight.pools',
-  'insight.pool'
-
+  'insight.messages'
 ]);
 
-angular.module('insight.system', [ 'chart.js' ]);
+angular.module('insight.system', []);
 angular.module('insight.socket', []);
 angular.module('insight.blocks', []);
 angular.module('insight.transactions', []);
 angular.module('insight.address', []);
 angular.module('insight.search', []);
 angular.module('insight.charts', []);
-angular.module('insight.chart', []);
-angular.module('insight.pools', [ 'chart.js', 'ngNumeraljs' ]);
-angular.module('insight.pool', []);
-angular.module('insight.markets', []);
-angular.module('insight.chart', []);
-angular.module('insight.richList', []);
-angular.module('insight.statistics', [ 'ngNumeraljs' ]);
 angular.module('insight.status', []);
 angular.module('insight.connection', []);
 angular.module('insight.currency', []);

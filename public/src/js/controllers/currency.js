@@ -14,26 +14,13 @@ angular.module('insight.currency').controller('CurrencyController',
       value = value * 1; // Convert to number
 
       if (!isNaN(value) && typeof value !== 'undefined' && value !== null) {
-
-        var resSymbol;
-
-        if (this.symbol === 'USD') {
-          resSymbol = 'USD';
-        } else if (this.symbol === 'mZEC') {
-          resSymbol = 'm' + this.realSymbol;
-        } else if (this.symbol === 'bits') {
-          resSymbol = 'bits';
-        } else {
-          resSymbol = this.realSymbol;
-        }
-
-        if (value === 0.00000000) return '0 ' + resSymbol; // fix value to show
+        if (value === 0.00000000) return '0 ' + this.symbol; // fix value to show
 
         var response;
 
         if (this.symbol === 'USD') {
-          response = _roundFloat((value * this.factor), 2); 
-        } else if (this.symbol === 'mZEC') {
+          response = _roundFloat((value * this.factor), 2);
+        } else if (this.symbol === 'm'+netSymbol) {
           this.factor = 1000;
           response = _roundFloat((value * this.factor), 5);
         } else if (this.symbol === 'bits') {
@@ -45,14 +32,8 @@ angular.module('insight.currency').controller('CurrencyController',
         }
         // prevent sci notation
         if (response < 1e-7) response=response.toFixed(8);
-		
-		if (resSymbol === 'USD') {
-			return '$' + numeral(response).format('0,0.[00]') + ' ' + resSymbol;
-		} else if (resSymbol === 'ZEC'){
-			return numeral(response).format('0,0.00000000') + ' ' + resSymbol;
-		} else {
-			return response + ' ' + resSymbol;
-		}
+
+        return response + ' ' + this.symbol;
       }
 
       return 'value error';
@@ -64,10 +45,9 @@ angular.module('insight.currency').controller('CurrencyController',
 
       if (currency === 'USD') {
         Currency.get({}, function(res) {
-          $rootScope.currency.factor = res.data.rate;
-          $rootScope.currency.realSymbol = res.data.short;
+          $rootScope.currency.factor = $rootScope.currency.bitstamp = res.data.bitstamp;
         });
-      } else if (currency === 'mZEC') {
+      } else if (currency === 'm'+netSymbol) {
         $rootScope.currency.factor = 1000;
       } else if (currency === 'bits') {
         $rootScope.currency.factor = 1000000;
@@ -78,8 +58,7 @@ angular.module('insight.currency').controller('CurrencyController',
 
     // Get initial value
     Currency.get({}, function(res) {
-      $rootScope.currency.factor = res.data.rate;
-      $rootScope.currency.realSymbol = res.data.short;
+      $rootScope.currency.factor = $rootScope.currency.bitstamp = res.data.bitstamp;
     });
 
   });
